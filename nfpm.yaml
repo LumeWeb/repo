@@ -1,0 +1,17 @@
+name: "lumeweb-repo"
+arch: "amd64"
+platform: "linux"
+version: "v0.1.0"
+section: "default"
+priority: "extra"
+maintainer: "Derrick Hammer contact@lumeweb.com"
+description: Repository package For Lume Web relay software
+vendor: "Hammer Technologies LLC"
+homepage: "https://lumeweb.com"
+license: "MIT"
+contents:
+- src: lumeweb.gpg
+  dst: /usr/share/keyrings/lumeweb.gpg
+scripts:
+  preinstall: ./scripts/preinstall.sh
+  postremove: ./scripts/postremove.sh

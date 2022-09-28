@@ -1,0 +1,18 @@
+pipeline:
+    package:
+        image: ghcr.io/goreleaser/nfpm
+        commands:
+            - nfpm pkg --packager deb
+    publish:
+        image: woodpeckerci/plugin-s3
+        settings:
+            endpoint: sfo3.digitaloceanspaces.com
+            bucket:
+                from_secret: s3_bucket
+            access_key:
+                from_secret: s3_access_key
+            secret_key:
+                from_secret: s3_secret_key
+            source: "*.deb"
+            target: /
+            acl: public-read
