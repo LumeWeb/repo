@@ -13,5 +13,5 @@ contents:
 - src: lumeweb.gpg
   dst: /usr/share/keyrings/lumeweb.gpg
 scripts:
-  preinstall: ./scripts/preinstall.sh
+  postinstall: ./scripts/postinstall.sh
   postremove: ./scripts/postremove.sh
